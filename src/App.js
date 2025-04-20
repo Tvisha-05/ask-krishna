@@ -1,6 +1,5 @@
 import React, { useState, useEffect } from 'react';
 import './App.css';
-import axios from 'axios';
 
 const App = () => {
   const [message, setMessage] = useState('');
@@ -29,39 +28,10 @@ const App = () => {
     setConversation(newConversation);
     setMessage('');
 
-    try {
-      const response = await axios.post(
-        'https://generativelanguage.googleapis.com/v1beta/models/gemini-1.5-flash:generateContent?key=YOUR_API_KEY',
-        {
-          contents: [
-            {
-              parts: [
-                {
-                  text: `You are Lord Krishna, the divine guide from the Bhagavad Gita. Speak with wisdom, love, and eternal knowledge. Answer the following as Krishna himself: \n\nUser: ${message}\n\nKrishna:`
-                }
-              ]
-            }
-          ],
-          safetySettings: [
-            { category: "HARM_CATEGORY_HARASSMENT", threshold: "BLOCK_NONE" },
-            { category: "HARM_CATEGORY_HATE_SPEECH", threshold: "BLOCK_NONE" },
-            { category: "HARM_CATEGORY_SEXUALLY_EXPLICIT", threshold: "BLOCK_NONE" },
-            { category: "HARM_CATEGORY_DANGEROUS_CONTENT", threshold: "BLOCK_NONE" }
-          ]
-        }
-      );
-
-      console.log('API Response:', response.data);
-      
-      const krishnaMessage =
-        response.data.candidates?.[0]?.content?.parts?.[0]?.text ||
-        "The Lord's wisdom is vast, yet silence prevails. Try again, dear one.";
-
-      setConversation([...newConversation, { sender: 'krishna', message: krishnaMessage }]);
-    } catch (error) {
-      console.error('Error fetching response:', error);
-      setConversation([...newConversation, { sender: 'krishna', message: "I am here, yet the universe resists my words. Try again, dear soul." }]);
-    }
+    // Simulate Krishna's response
+    const krishnaMessage = "I am here, yet the universe resists my words. Try again, dear soul.";
+    
+    setConversation([...newConversation, { sender: 'krishna', message: krishnaMessage }]);
   };
 
   // Function to clear conversation
