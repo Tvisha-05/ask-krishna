@@ -1,0 +1,110 @@
+/* Import Google Fonts */
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600&display=swap');
+
+/* 🌌 Background Styling */
+/* Apply a divine background */
+/* Apply a divine background */
+body {
+  background: url('/Users/tvishasridonepudi/Downloads/IMG_7427.JPG') no-repeat center center fixed;
+  background-size: cover;
+  font-family: 'Arial', sans-serif;
+  margin: 0;
+  padding: 0;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
+  flex-direction: column;
+}
+
+/* App container */
+.app {
+  width: 90%;
+  max-width: 900px;
+  background: rgba(255, 255, 255, 0.8);
+  border-radius: 15px;
+  padding: 20px;
+  box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.2);
+}
+
+/* Header */
+header {
+  text-align: center;
+  font-size: 20px;
+  font-weight: bold;
+  padding: 10px;
+  color: #333;
+}
+
+/* Messages appear inline on the screen */
+.user-message, .krishna-message {
+  max-width: 75%;
+  padding: 12px;
+  border-radius: 15px;
+  font-size: 14px;
+  line-height: 1.5;
+  word-wrap: break-word;
+  white-space: pre-wrap;
+  margin: 5px 0;
+}
+
+/* User messages (align right, green bubble) */
+.user-message {
+  align-self: flex-end;
+  background-color: #25d366; /* WhatsApp green */
+  color: white;
+  border-radius: 15px 15px 0 15px;
+  text-align: right;
+  margin-left: auto;
+  width: fit-content;
+}
+
+/* Krishna messages (align left, gray bubble) */
+.krishna-message {
+  align-self: flex-start;
+  background-color: #ececec;
+  color: black;
+  border-radius: 15px 15px 15px 0;
+  text-align: left;
+  margin-right: auto;
+  width: fit-content;
+}
+
+/* Input container */
+.input-container {
+  display: flex;
+  gap: 10px;
+  margin-top: 10px;
+}
+
+/* Input box styling */
+input {
+  flex: 1;
+  padding: 10px;
+  border: 1px solid #ccc;
+  border-radius: 5px;
+  font-size: 14px;
+}
+
+/* Button styling */
+button {
+  padding: 10px;
+  border: none;
+  background-color: #007bff;
+  color: white;
+  border-radius: 5px;
+  cursor: pointer;
+}
+
+button:hover {
+  background-color: #0056b3;
+}
+
+/* Clear button */
+.clear-btn {
+  background-color: #dc3545;
+}
+
+.clear-btn:hover {
+  background-color: #b02a37;
+}
